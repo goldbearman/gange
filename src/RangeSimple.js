@@ -5,6 +5,10 @@ export default function RangeSimple(props) {
     const {value,step,min,max,onChange} = props;
     // const [value, setValue] = useState([15000]);
 
+  const isPremium = true;
+
+  const mainColor = isPremium ? '#1B2432' : '#E40038';
+
     console.log(props);
     console.log(value);
     return (
@@ -15,13 +19,18 @@ export default function RangeSimple(props) {
             values={[value]}
             onChange={([el]) => onChange(el)}
             renderTrack={({ props, children }) => (
+
+
+
                 <div
                     {...props}
                     style={{
-                        ...props.style,
-                        height: '6px',
-                        width: '100%',
-                        backgroundColor: '#ccc'
+                      ...props.style,
+                      height: '24px',
+                      width: '24px',
+                      backgroundColor: '#fff',
+                      border: `2px solid ${mainColor}`,
+                      borderRadius: '50%',
                     }}
                 >
                     {children}
